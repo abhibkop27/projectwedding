@@ -1,0 +1,181 @@
+:root {
+    --primary-color: #D4AF37;
+    --secondary-color: #800020;
+    --background-color: #FFF8F0;
+    --text-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--background-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+.card {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    min-height: 500px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    overflow: hidden;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.mandala {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: url('https://raw.githubusercontent.com/public-apis/public-apis/master/assets/mandala.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.1;
+    animation: rotate 60s linear infinite;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.om {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    animation: scaleIn 1s ease-out;
+}
+
+.invite {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3em;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    animation: slideDown 1s ease-out;
+}
+
+.names {
+    margin: 40px 0;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5em;
+    color: var(--primary-color);
+    animation: slideUp 1s ease-out;
+}
+
+.bride, .groom {
+    display: inline-block;
+    animation: shimmer 3s infinite;
+}
+
+.and {
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 0.8em;
+    color: var(--text-color);
+}
+
+.details {
+    margin: 30px 0;
+    line-height: 1.6;
+    animation: fadeIn 2s ease-out;
+}
+
+.date, .time, .venue {
+    margin: 10px 0;
+    color: var(--text-color);
+}
+
+.rsvp-btn {
+    padding: 12px 40px;
+    font-size: 1.1em;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: pulse 2s infinite;
+}
+
+.rsvp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+.decorative-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--primary-color);
+    margin: 20px;
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+@keyframes rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+@keyframes shimmer {
+    0% { color: var(--primary-color); }
+    50% { color: var(--secondary-color); }
+    100% { color: var(--primary-color); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+    }
+    
+    .invite {
+        font-size: 2em;
+    }
+    
+    .names {
+        font-size: 1.8em;
+    }
+}

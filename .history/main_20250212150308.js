@@ -1,0 +1,49 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const rsvpBtn = document.querySelector('.rsvp-btn');
+    
+    rsvpBtn.addEventListener('click', () => {
+        alert('Thank you for your interest! RSVP functionality will be available soon.');
+    });
+
+    // Add sparkle effect on names hover
+    const names = document.querySelector('.names');
+    names.addEventListener('mouseover', createSparkle);
+});
+
+function createSparkle(e) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle';
+    sparkle.style.cssText = `
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background: gold;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 2;
+        left: ${e.clientX}px;
+        top: ${e.clientY}px;
+        animation: sparkleAnim 1s forwards;
+    `;
+    
+    document.body.appendChild(sparkle);
+    
+    sparkle.addEventListener('animationend', () => {
+        sparkle.remove();
+    });
+}
+
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes sparkleAnim {
+        0% {
+            transform: scale(0) rotate(0deg);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1) rotate(180deg);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
