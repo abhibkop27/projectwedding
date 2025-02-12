@@ -23,7 +23,7 @@
                 <p class="time">At 12:21 PM</p>
                 <p class="venue">Reshimgathi Sanskrutik Bhavan
                     <br>Spurti Chowk, Sangli<br>
-                    <a href="https://maps.app.goo.gl/NcRUe2sYRECoGc8g8">Get a Location</a>
+                    <button onclick="openLink()">Get a Location</button>
                 </p>
             </div>
             <button class="modal-trigger">Accept</button>
@@ -39,7 +39,12 @@
             </div>
         </div>
 </div>
-    <script src="main.js"></script>
-    
+    <script src="main.js">
+
+function openLink(){
+            window.open("https://maps.app.goo.gl/NcRUe2sYRECoGc8g8", "_blank");
+        }
+    </script>
+
 </body>
 </html>

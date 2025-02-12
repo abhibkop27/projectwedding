@@ -71,5 +71,7 @@ const modal = document.getElementById('weddingModal');
         });
 
         function openLink(){
-            window.open("https://maps.app.goo.gl/NcRUe2sYRECoGc8g8", "_blank");
+            var link = "https://maps.app.goo.gl/NcRUe2sYRECoGc8g8";
+            window.open(link, "_blank");
         }
+        
